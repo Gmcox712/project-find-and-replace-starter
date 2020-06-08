@@ -19,8 +19,38 @@ function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
+userinput = document.getElementsByClassName("grid");
+let x = document.getElementById("div")
+const gridId = [""]
+let foundword = gridId
+let myinput = []
 
-// YOUR CODE GOES HERE
+
+
+
+replaceAllButton.addEventListener("click", function(){
+    let find = findInput.value
+    let replace = replaceInput.value
+    
+    for (let innertext = 0; innertext < rowElements.length; innertext += 1) {
+        let innercell = getCellElements(rowElements[innertext])
+
+        for (let textcells = 0; textcells < innercell.length; textcells += 1){
+            console.log(innercell[textcells])
+            if (innercell[textcells].innerHTML.includes(find)){
+                innercell[textcells].innerHTML = innercell[textcells].innerHTML.replace(find,replace)
+
+            }
+
+        }
+
+    }
+   
+})
+
+
+
+
 
 
 // One last thing: dedicate very careful attention to using variables and
